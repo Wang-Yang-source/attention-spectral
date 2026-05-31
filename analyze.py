@@ -66,7 +66,7 @@ def gini_index(attn_matrix):
     # Lorenz curve
     lorenz = cumulative / (cumulative[-1] + 1e-12)
     perfect_equal = np.arange(1, n + 1) / n
-    return 1 - 2 * np.trapz(lorenz, perfect_equal)
+    return 1 - 2 * np.trapezoid(lorenz, perfect_equal)
 
 def diagonal_concentration(attn_matrix):
     """对角线附近 (距离≤2) 的注意力权重占比"""
