@@ -9,7 +9,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math
+from dataclasses import dataclass
 
+@dataclass
 class TinyTransformerConfig:
     d_model: int = 128
     n_heads: int = 4

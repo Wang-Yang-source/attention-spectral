@@ -91,10 +91,8 @@ def train(args):
         x, y = make_data(args.batch_size, args.seq_len, device)
 
         logits, _ = model(x)
-        loss = nn.CrossEntropyLoss()(
-            logits[:, -1, :][y[:, -1] > 0],
-            y[:, -1][y[:, -1] > 0]
-        ) if (y[:, -1] > 0).any() else torch.tensor(0.0)
+        # Only compute loss on the prediction position (index 4 = '?')
+        loss = nn.CrossEntropyLoss()(logits[:, 4, :], y[:, 4])
 
         optimizer.zero_grad()
         loss.backward()

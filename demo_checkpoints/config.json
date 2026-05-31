@@ -1,0 +1,1 @@
+{"d_model": 128, "n_heads": 4, "n_layers": 2, "d_ff": 512, "seq_len": 10, "vocab_size": 128, "batch_size": 128, "lr": 0.001, "wd": 0.01, "steps": 300, "seed": 42, "ckpt_every": 50, "out_dir": "./demo_checkpoints"}
